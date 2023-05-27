@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>FlipaClip</title>
+</head>
+<body style="background-color: rgb(50, 50, 50); font-family: Arial, Helvetica, sans-serif;">
+    <div class="header">
+        <div id="play" style="margin-left: 2rem;color: white;"><ion-icon name="play" class="icon"></ion-icon></div>
+        <div class="painting">
+            <div class="brush" id="brush" onclick="brush()"><ion-icon name="brush"></ion-icon></div>
+            <div class="erase" id="eraser" onclick="eraser()"><ion-icon name="tablet-portrait"></ion-icon></div>
+        </div>
+        <div class="options">
+            <div style="width: fit-content;padding: 1rem; display: flex;flex-direction: row;border-style: solid; border-width: 0px 2px 0px 0px; border-color: rgba(255,255,255,0.7);">
+                <label for="color" style="margin: 0.4rem 0rem 0rem 0rem; color: rgb(255, 255, 255);">Color</label>
+                <input type="color" id="color" style="margin-left: 1rem;border-style: none;">
+            </div>
+            <div style="width: fit-content;padding: 1.2rem; display: flex;flex-direction: row;border-style: solid; border-width: 0px 2px 0px 0px; border-color: rgba(255,255,255,0.7);">
+                <label for="weight" style="margin-left: 0rem; color: rgb(255, 255, 255);">Brush Size</label>
+                <input type="range" id="weight" min="1" max="128" style="margin-left: 1rem;">
+            </div>
+            <div style="width: fit-content;padding: 1rem; display: flex;flex-direction: row;">
+                <label for="fps" style="margin: 0.4rem 0rem 0rem 0rem; color: rgb(255, 255, 255);">FPS</label>
+                <input type="text" id="fps" style="margin-left: 1rem;width: 2rem;padding: 0.4rem;border-radius: 1rem; border-style: solid;background-color: inherit;color: white;border-color: white;text-align: center;">
+            </div>
+        </div>
+    </div>
+    <div class="layers" id="layers">
+        <div class="l" id="0" onclick="goto(0)"> Layer 1 <ion-icon name="copy" style="position: relative;left: 11rem;top: 0.1rem;" id="copy" onclick="dup(0)"></ion-icon><ion-icon name="trash-bin" style="position: relative;left: 8rem;top: 0.1rem;" onclick="trash(0)"></ion-icon></div>
+    </div>
+    <div id="new" class="l" style="text-align: center; background-color: rgb(0, 150, 120); border-style: none;position: fixed;bottom: 1.2rem; left: 2rem;">ADD</div>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
